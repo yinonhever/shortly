@@ -1,0 +1,131 @@
+.header {
+  padding: 0 $padding-side-desktop;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__nav-toggle,
+  &__seperator {
+    display: none;
+  }
+
+  &__navigation {
+    margin-left: 4.6rem;
+    flex: 1;
+  }
+
+  &__nav-list,
+  &__nav-start,
+  &__nav-end {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-end {
+    margin-left: auto;
+  }
+
+  &__nav-link {
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $color-dark-blue;
+    }
+  }
+
+  &__nav-start &__nav-link:not(:last-child) {
+    margin-right: 2.9rem;
+
+    @include respond(tablet) {
+      margin-right: 0;
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__nav-end &__nav-link:not(:last-child) {
+    margin-right: 3.7rem;
+
+    @include respond(tablet) {
+      margin-right: 0;
+      margin-bottom: 2.6rem;
+    }
+  }
+
+  // MOBILE VIEW
+  @include respond(tablet) {
+    padding: 0 $padding-side-mobile;
+    justify-content: space-between;
+
+    &__nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 2.4rem;
+      height: 2.1rem;
+
+      &--line {
+        width: 100%;
+        height: 3px;
+        background-color: $color-grey-dark;
+      }
+    }
+
+    &__navigation {
+      position: absolute;
+      margin: 0;
+      left: $padding-side-mobile;
+      right: $padding-side-mobile;
+      top: calc(100% + 2.3rem);
+      text-align: center;
+      max-height: 0;
+      overflow: hidden;
+      z-index: 999;
+      transition: max-height 0.6s;
+
+      &.active {
+        max-height: 40rem;
+      }
+    }
+
+    &__nav-list,
+    &__nav-start,
+    &__nav-end {
+      flex-direction: column;
+      margin: 0;
+    }
+
+    &__nav-list {
+      background-color: $color-primary-violet;
+      width: 100%;
+      height: 100%;
+      padding: 4rem $padding-side-mobile;
+      border-radius: 10px;
+    }
+
+    &__nav-end {
+      width: 100%;
+    }
+
+    &__nav-link {
+      color: #fff !important;
+      font-size: 1.8rem;
+    }
+
+    &__seperator {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color-grey-dark;
+      opacity: 0.25;
+      margin: 3.2rem 0;
+    }
+
+    &__btn {
+      align-self: stretch;
+      font-size: 1.8rem;
+      padding: 1.2rem 0;
+    }
+  }
+}

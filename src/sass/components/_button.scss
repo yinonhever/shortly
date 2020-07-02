@@ -1,0 +1,69 @@
+.btn {
+  background-color: $color-primary-cyan;
+  color: #fff;
+  font-weight: 700;
+  display: inline-block;
+  overflow: hidden;
+  transition: background-color 0.5s;
+
+  //for the <button> element
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:hover {
+    background-color: #9ae3e3;
+  }
+
+  &--round {
+    border-radius: 100px;
+  }
+
+  &--square {
+    border-radius: 10px;
+  }
+
+  &--sm {
+    padding: 0.9rem 2.4rem;
+    font-size: 1.5rem;
+  }
+
+  &--md {
+    padding: 0.9rem 3.1rem;
+    font-size: 1.5rem;
+  }
+
+  &--lg {
+    padding: 1.4rem 4rem;
+    font-size: 2rem;
+  }
+
+  &--hg {
+    padding: 1.8rem 4rem;
+    font-size: 2rem;
+  }
+
+  &.copied {
+    background-color: $color-primary-violet !important;
+  }
+
+  & > &__text {
+    transition: transform 0.5s;
+
+    &--copy {
+      transform: translateX(0);
+    }
+
+    &--copied {
+      transform: translateX(-10rem);
+    }
+  }
+
+  &.copied &__text--copy {
+    transform: translateX(10rem);
+  }
+
+  &.copied &__text--copied {
+    transform: translateX(0);
+  }
+}

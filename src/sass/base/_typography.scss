@@ -1,0 +1,56 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: $color-grey-dark;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: $color-dark-blue;
+}
+
+.heading-1 {
+  font-size: 7rem;
+  letter-spacing: -2px;
+  line-height: 1.125;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.heading-3 {
+  font-size: 2.2rem;
+}
+
+.heading-4 {
+  font-size: 1.6rem;
+  letter-spacing: -0.25px;
+}
+
+.paragraph-lg {
+  font-size: 2.2rem;
+  letter-spacing: 0.15px;
+  line-height: 1.636;
+}
+
+.paragraph-md {
+  letter-spacing: 0.12px;
+  line-height: 1.778;
+}
+
+.paragraph-sm {
+  font-size: 1.5rem;
+  line-height: 1.733;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
