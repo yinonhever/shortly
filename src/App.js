@@ -13,25 +13,7 @@ function App() {
   const [results, setResults] = useState([]);
 
   const submitHandler = newResult => {
-    const newArray = [...results, newResult];
-    setResults(newArray);
-    console.log(newArray);
-    console.log(results);
-  }
-
-  const resultList = () => {
-    if (results.length === 0) {
-      return null;
-    }
-    else {
-      return (
-        <div className="results">
-          {results.map(result => {
-
-          })}
-        </div>
-      )
-    }
+    setResults(results => [...results, newResult]);
   }
 
   return (
@@ -39,7 +21,17 @@ function App() {
       <Intro />
       <Main>
         <Shorten submit={submitHandler} />
-        {resultList}
+        {results.length === 0 ? null : (
+          <div className="results">
+            {results.map((result, index) => (
+              <Result
+                original={result.original}
+                shortened={result.shortened}
+                key={result.hashid + "" + index}
+              />
+            ))}
+          </div>
+        )}
         <Features />
       </Main>
       {/* 

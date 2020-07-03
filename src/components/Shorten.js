@@ -25,12 +25,13 @@ const Shorten = props => {
                 .then(response => {
                     const newResult = {
                         original: urlInput,
-                        shortened: "https://rel.ink/" + response.data.hashid
+                        shortened: "https://rel.ink/" + response.data.hashid,
+                        hashid: response.data.hashid
                     }
 
                     props.submit(newResult);
                 })
-                
+
             setUrlInput("");
         }
     }

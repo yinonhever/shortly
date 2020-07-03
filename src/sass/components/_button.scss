@@ -44,27 +44,36 @@
     font-size: 2rem;
   }
 
+  &__text--copied {
+    display: none;
+  }
+
   &.copied {
     background-color: $color-primary-violet !important;
   }
 
-  & > &__text {
-    transition: transform 0.5s;
-
-    &--copy {
-      transform: translateX(0);
-    }
-
-    &--copied {
-      transform: translateX(-10rem);
-    }
+  &--md.copied {
+    padding: 0.9rem 2.1rem;
   }
 
   &.copied &__text--copy {
-    transform: translateX(10rem);
+    display: none;
   }
 
   &.copied &__text--copied {
+    display: inline-block;
+    animation: slideFromLeft 0.3s;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
     transform: translateX(0);
   }
 }

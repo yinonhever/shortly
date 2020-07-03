@@ -31,7 +31,7 @@
   &__input {
     flex: 1;
     margin-right: 2.4rem;
-    border: none;
+    border: 3px solid transparent;
     border-radius: 10px;
     outline: none;
     font-family: inherit;
@@ -47,7 +47,7 @@
   }
 
   &__form.error &__input {
-    border: 3px solid $color-secondary-red;
+    border-color: $color-secondary-red;
     color: $color-secondary-red;
   }
 }
