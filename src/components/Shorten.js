@@ -37,9 +37,11 @@ const Shorten = props => {
     }
 
     return (
-        <div className="shorten" onSubmit={event => submitHandler(event)}>
+        <div className="shorten">
             <img src={bgDesktop} alt="shorten-bg" className="shorten__bg shorten__bg--desktop"></img>
-            <form className={error ? "shorten__form error" : "shorten__form"}>
+            <form
+                className={error ? "shorten__form error" : "shorten__form"}
+                onSubmit={event => submitHandler(event)}>
                 <input
                     type="text"
                     className="shorten__input"
@@ -49,7 +51,6 @@ const Shorten = props => {
                 </input>
                 <button className="btn btn--square btn--hg">Shorten It!</button>
             </form>
-
         </div>
     )
 }
