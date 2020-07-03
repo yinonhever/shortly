@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import usePersistedState from "../usePersistedState";
 import Shorten from "./Shorten";
 import Result from "./Result";
 import Features from "./Features";
 
 const Main = () => {
-    const [results, setResults] = useState([]);
+    const [results, setResults] = usePersistedState("results", []);
 
     const submitHandler = newResult => {
         setResults(results => [...results, newResult]);
