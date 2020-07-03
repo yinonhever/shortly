@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import logo from "../images/logo.svg";
 
 const Header = () => {
-    let [navOpen, setNavOpen] = useState(false);
+    const [navOpen, setNavOpen] = useState(false);
 
     const toggleHandler = () => {
-        const isActive = !navOpen;
-        setNavOpen(isActive);
+        setNavOpen(!navOpen);
         document.querySelector("body").classList.toggle("no-scroll");
     }
 
