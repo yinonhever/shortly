@@ -1,7 +1,7 @@
 .intro {
-  padding: 4.8rem 0 12rem;
+  padding: 4.8rem 0 13.8rem;
 
-  @include respond(tablet) {
+  @include respond(tablet-land) {
     padding: 4rem 0 16.8rem;
   }
 
@@ -12,18 +12,59 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+
+    @include respond(tablet-land) {
+      padding: 0;
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    @include respond(mobile-land) {
+      margin-top: 2.3rem;
+    }
   }
 
   &__content {
     width: 40vw;
+
+    @include respond(tablet-land) {
+      width: 100%;
+      max-width: 60rem;
+      padding: 0 $padding-side-mobile;
+    }
   }
 
   &__text {
     margin: 0.5rem 0 3.8rem;
+
+    @include respond(tablet-land) {
+      margin: 1.5rem 0 3.2rem;
+    }
   }
 
   &__img {
     width: 49vw;
     transform: translateX(15%);
+
+    img {
+      width: 100%;
+    }
+
+    @include respond(tablet-land) {
+      transform: none;
+      margin-bottom: 3.8rem;
+      width: 100%;
+      max-width: 60rem;
+      padding: 0 $padding-side-mobile;
+    }
+
+    @include respond(mobile) {
+      padding-left: $padding-side-mobile;
+      overflow: hidden;
+
+      img {
+        width: 145%;
+      }
+    }
   }
 }

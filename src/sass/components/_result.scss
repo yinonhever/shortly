@@ -5,14 +5,32 @@
   display: flex;
   align-items: center;
 
+  @include respond(tablet-land) {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.6rem 1.6rem 1.6rem;
+  }
+
   &:not(:last-child) {
     margin-bottom: 1.6rem;
+
+    @include respond(tablet-land) {
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__url {
     font-size: 2rem;
     letter-spacing: 0.15px;
     line-height: 1.8;
+
+    @include respond(tablet-land) {
+      font-size: 1.6rem;
+      letter-spacing: 0.12px;
+      line-height: 2.25;
+      margin-right: 0 !important;
+      word-wrap: break-word;
+    }
 
     &--original {
       color: $color-dark-blue;
@@ -23,6 +41,30 @@
     &--shortened {
       color: $color-primary-cyan;
       margin-right: 2.4rem;
+
+      @include respond(tablet-land) {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+
+  &__seperator {
+    display: none;
+
+    @include respond(tablet-land) {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $color-grey-dark;
+      opacity: 0.25;
+      margin: 0.6rem 0;
+    }
+  }
+
+  &__btn {
+    @include respond(tablet-land) {
+      font-size: 1.6rem;
+      padding: 0.9rem 0;
     }
   }
 }

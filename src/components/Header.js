@@ -13,9 +13,9 @@ const Header = () => {
         <header className="header">
             <img src={logo} alt="logo" className="logo header__logo"></img>
             <div className="header__nav-toggle" onClick={toggleHandler}>
-                <div className="header__nav-toggle--line"></div>
-                <div className="header__nav-toggle--line"></div>
-                <div className="header__nav-toggle--line"></div>
+                <div className="header__nav-toggle--line" />
+                <div className="header__nav-toggle--line" />
+                <div className="header__nav-toggle--line" />
             </div>
             <nav className={navOpen ? "header__navigation active" : "header__navigation"}>
                 <div className="header__nav-list">

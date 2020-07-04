@@ -1,5 +1,9 @@
 .features {
   padding: 12rem 0 0;
+
+  @include respond(tablet) {
+    padding: 8rem 0 0;
+  }
   
   &__intro {
     text-align: center;

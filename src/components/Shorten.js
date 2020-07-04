@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import bgDesktop from "../images/bg-shorten-desktop.svg";
+import bgMobile from "../images/bg-shorten-mobile.svg";
 import axios from "axios";
 
 const Shorten = props => {
@@ -39,17 +40,20 @@ const Shorten = props => {
     return (
         <div className="shorten">
             <img src={bgDesktop} alt="shorten-bg" className="shorten__bg shorten__bg--desktop"></img>
+            <img src={bgMobile} alt="shorten-bg" className="shorten__bg shorten__bg--mobile"></img>
             <form
                 className={error ? "shorten__form error" : "shorten__form"}
                 onSubmit={event => submitHandler(event)}>
-                <input
-                    type="text"
-                    className="shorten__input"
-                    placeholder="Shorten a link here..."
-                    value={urlInput}
-                    onChange={event => changeHandler(event)}>
-                </input>
-                <button className="btn btn--square btn--hg">Shorten It!</button>
+                <div className="shorten__input-container">
+                    <input
+                        type="text"
+                        className="shorten__input"
+                        placeholder="Shorten a link here..."
+                        value={urlInput}
+                        onChange={event => changeHandler(event)}>
+                    </input>
+                </div>
+                <button className="btn btn--square btn--hg shorten__btn">Shorten It!</button>
             </form>
         </div>
     )

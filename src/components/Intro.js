@@ -14,7 +14,10 @@ const Intro = () => (
                 </p>
                 <a href="/" className="btn btn--round btn--lg">Get Started</a>
             </div>
-            <img className="intro__img" src={illustration} alt="illustration-working"></img>
+            <div className="intro__img">
+                <img src={illustration} alt="illustration-working"></img>
+            </div>
+
         </div>
     </section>
 )

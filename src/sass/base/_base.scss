@@ -26,4 +26,8 @@ body {
 .main {
   padding: 0 $padding-side-desktop 12rem;
   background-color: $color-grey-light;
+
+  @include respond(mobile) {
+    padding: 0 $padding-side-mobile 10rem;
+  }
 }

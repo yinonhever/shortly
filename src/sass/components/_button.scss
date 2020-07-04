@@ -61,8 +61,12 @@
   }
 
   &.copied &__text--copied {
-    display: inline-block;
+    display: block;
     animation: slideFromLeft 0.3s;
+
+    @include respond(tablet-land) {
+      animation: slideFromLeftMobile 0.4s;
+    }
   }
 }
 
@@ -70,6 +74,18 @@
   0% {
     opacity: 0;
     transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeftMobile {
+  0% {
+    opacity: 0;
+    transform: translateX(-100rem);
   }
 
   100% {
