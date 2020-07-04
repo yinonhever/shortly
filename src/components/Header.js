@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import logo from "../images/logo.svg";
 
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
+    const navRef = useRef();
 
     const toggleHandler = () => {
+        if(!navOpen) {
+            disableBodyScroll(navRef);
+        }
+        else {
+            enableBodyScroll(navRef);
+        }
+
         setNavOpen(!navOpen);
-        document.querySelector("body").classList.toggle("no-scroll");
     }
 
     return (
@@ -17,7 +25,9 @@ const Header = () => {
                 <div className="header__nav-toggle--line" />
                 <div className="header__nav-toggle--line" />
             </div>
-            <nav className={navOpen ? "header__navigation active" : "header__navigation"}>
+            <nav
+                className={navOpen ? "header__navigation active" : "header__navigation"}
+                ref={navRef}>
                 <div className="header__nav-list">
                     <div className="header__nav-start">
                         <a href="/" className="header__nav-link">Features</a>

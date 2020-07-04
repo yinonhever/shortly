@@ -60,6 +60,7 @@ const Shorten = () => {
             <div className="shorten__box" ref={boxRef}>
                 <img src={bgDesktop} alt="shorten-bg" className="shorten__bg shorten__bg--desktop"></img>
                 <img src={bgMobile} alt="shorten-bg" className="shorten__bg shorten__bg--mobile"></img>
+                
                 <form
                     className={error ? "shorten__form error" : "shorten__form"}
                     onSubmit={event => submitHandler(event)}>

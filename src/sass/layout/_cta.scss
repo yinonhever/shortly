@@ -1,0 +1,65 @@
+.cta {
+  position: relative;
+  background-color: $color-primary-violet;
+  overflow: hidden;
+
+  &__bg {
+    height: 25rem;
+    width: auto;
+
+    @media only screen and (min-width: 1440px) {
+      height: auto;
+      width: 100%;
+    }
+
+    &--desktop {
+      display: block;
+    }
+
+    &--mobile {
+      display: none;
+    }
+
+    @media only screen and (max-width: 450px) {
+      height: auto;
+      width: 100%;
+
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    @include respond(mobile) {
+      padding: 0 $padding-side-mobile;
+    }
+  }
+
+  &__text {
+    margin-bottom: 3.2rem;
+    color: #fff;
+
+    @include respond(mobile) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__btn {
+    display: block;
+  }
+}
