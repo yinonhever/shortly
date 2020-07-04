@@ -1,0 +1,39 @@
+.feature {
+  padding-top: 4.4rem;
+  position: relative;
+
+  @include respond(tablet-land) {
+    text-align: center;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 3.2rem;
+    height: 8.8rem;
+    width: 8.8rem;
+    border-radius: 50%;
+    background-color: $color-primary-violet;
+
+    @include respond(tablet-land) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__box {
+    background-color: #fff;
+    padding: 7.7rem 3.2rem 4.1rem;
+  }
+
+  &__title {
+    margin-bottom: 1.4rem;
+  }
+}

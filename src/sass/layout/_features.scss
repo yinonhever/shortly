@@ -1,11 +1,88 @@
 .features {
-  padding: 12rem 0 0;
-
-  @include respond(tablet) {
-    padding: 8rem 0 0;
+  @include respond(tablet-land) {
+    width: 100%;
+    max-width: 54rem;
+    margin: auto;
   }
-  
   &__intro {
     text-align: center;
+    width: 100%;
+    max-width: 54rem;
+    margin: auto;
+    margin-bottom: 5.6rem;
+
+    @include respond(tablet-land) {
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1.8rem;
+
+    @include respond(tablet-land) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__row {
+    position: relative;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @include respond(tablet-land) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    width: 31.5%;
+
+    @include respond(tablet-land) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 4.8rem;
+      }
+    }
+
+    &:first-child {
+      align-self: flex-start;
+
+      @include respond(tablet-land) {
+        align-self: initial;
+      }
+    }
+
+    &:last-child {
+      margin-top: 8.8rem;
+
+      @include respond(tablet-land) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__line {
+    height: 8px;
+    width: 100%;
+    background-color: $color-primary-cyan;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include respond(tablet-land) {
+      height: 95%;
+      width: 8px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

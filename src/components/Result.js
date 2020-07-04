@@ -11,7 +11,7 @@ const Result = props => {
     }
 
     return (
-        <Zoom duration="600">
+        <Zoom duration={600}>
             <div className="result">
                 <p className="result__url result__url--original">{props.original}</p>
                 <div className="result__seperator" />
