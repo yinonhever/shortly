@@ -17,7 +17,6 @@ const Intro = () => (
             <div className="intro__img">
                 <img src={illustration} alt="illustration-working"></img>
             </div>
-
         </div>
     </section>
 )
