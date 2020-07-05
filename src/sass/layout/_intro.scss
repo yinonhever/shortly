@@ -29,8 +29,12 @@
 
     @include respond(tablet-land) {
       width: 100%;
-      max-width: 60rem;
-      padding: 0 $padding-side-mobile;
+      max-width: 80rem;
+      padding: 0 $padding-side-desktop;
+    }
+
+    @include respond(mobile) {
+      padding: 0 $padding-side-mobile
     }
   }
 
@@ -54,8 +58,8 @@
       transform: none;
       margin-bottom: 3.8rem;
       width: 100%;
-      max-width: 60rem;
-      padding: 0 $padding-side-mobile;
+      max-width: 80rem;
+      padding: 0 $padding-side-desktop;
     }
 
     @include respond(mobile) {

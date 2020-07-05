@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/_main.scss";
-import Auxilliary from "./components/Auxilliary";
+import Auxilliary from "./hoc/Auxilliary";
 import Intro from "./components/Intro";
 import Main from "./components/Main";
 import Shorten from "./components/Shorten";

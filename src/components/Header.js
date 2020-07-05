@@ -19,7 +19,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <img src={logo} alt="logo" className="logo header__logo"></img>
+            <img src={logo} alt="logo" className="logo header__logo" />
             <div className="header__nav-toggle" onClick={toggleHandler}>
                 <div className="header__nav-toggle--line" />
                 <div className="header__nav-toggle--line" />

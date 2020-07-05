@@ -1,0 +1,75 @@
+.footer {
+  background-color: $color-dark-violet;
+  padding: 7.2rem $padding-side-desktop;
+  display: flex;
+  align-items: flex-start;
+
+  @include respond(tablet-land) {
+    padding: 5.6rem $padding-side-mobile;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__nav {
+    width: 42%;
+    margin-left: auto;
+    margin-right: 9.1%;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(tablet-land) {
+      width: 100%;
+      margin: 4.8rem 0;
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 2.3rem;
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    letter-spacing: -0.23px;
+    color: #bfbfbf;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $color-primary-cyan;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-link {
+    font-size: 2.75rem;
+    color: #fff;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $color-primary-cyan;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+}
