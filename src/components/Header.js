@@ -1,33 +1,21 @@
-import React, { useState, useRef } from "react";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import React, { useState, useEffect } from "react";
 import logo from "../images/logo.svg";
 
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
-    const navRef = useRef();
-
-    const toggleHandler = () => {
-        if(!navOpen) {
-            disableBodyScroll(navRef);
-        }
-        else {
-            enableBodyScroll(navRef);
-        }
-
-        setNavOpen(!navOpen);
-    }
+    useEffect(() => {
+        document.querySelector("body").style.overflow = navOpen ? "hidden" : null;
+    }, [navOpen])
 
     return (
         <header className="header">
             <img src={logo} alt="logo" className="logo header__logo" />
-            <div className="header__nav-toggle" onClick={toggleHandler}>
+            <div className="header__nav-toggle" onClick={() => setNavOpen(!navOpen)}>
                 <div className="header__nav-toggle--line" />
                 <div className="header__nav-toggle--line" />
                 <div className="header__nav-toggle--line" />
             </div>
-            <nav
-                className={navOpen ? "header__navigation active" : "header__navigation"}
-                ref={navRef}>
+            <nav className={navOpen ? "header__navigation active" : "header__navigation"}>
                 <div className="header__nav-list">
                     <div className="header__nav-start">
                         <a href="/" className="header__nav-link">Features</a>
